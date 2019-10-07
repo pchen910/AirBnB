@@ -1,0 +1,28 @@
+<div class="homemain">
+    <div class="searchform">
+        <h2 class="homeh2">Book a Room</h2>
+
+        <form method="POST" action="/home" id="form">
+            <label>WHERE</label>
+            <select>
+            <option value="toronto">Toronto</option>
+            <option value="vancouver">Vancouver</option>
+            <option value="banff">Banff</option>
+            <option value="montreal">Montreal</option>
+            </select><br><br>
+    
+            <label>CHECH-IN</label>
+            <input type="date" name="checkin"><br><br>
+    
+            <label>CHECK-OUT</label>
+            <input type="date" name="checkout"><br><br>
+
+            <label>GUEST</label>
+            <input type="text" name="guests" placeholder="No. Guests"><br><br>
+
+            <input type="submit" id="searchbut" name="submit" value="Search">
+        </form>
+    </div>
+</div>
+
+<div id="promotionpic"></div>

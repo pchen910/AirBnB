@@ -1,0 +1,134 @@
+*
+{
+  margin: 0;
+  padding: 0;
+}
+
+a
+{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover
+{
+    color: darkgray;
+}
+
+h1
+{
+    padding-top: 1rem;
+    padding-left: 3rem;
+}
+
+nav
+{
+    padding-bottom: 1rem;
+    position: relative;
+    text-align: right;
+}
+
+
+.homemain
+{
+    background-image: url("../img/header_img.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 700px;
+}
+
+.searchform
+{
+    display: inline-block;
+    border-style: ridge;
+    border-radius: 10px;
+    width: 20%;
+    height: 45vh;
+    padding-left: 3rem;
+    padding-top: 3rem;
+    padding-right: 1.5rem;
+    background-color: #ffffff;
+    margin-top: 12rem;
+    margin-left: 8rem;
+}
+
+
+#searchbut
+{
+    height: 2rem;
+    width: 100%;
+    border-radius: 10px;
+    background-color: crimson;
+    
+}
+
+h2, h3
+{
+    padding-bottom: 1.5rem;
+}
+
+
+.pics-container
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+img
+{
+    width: 100%;
+}
+
+.sociallink
+{
+    color: blue;
+}
+
+.signup-p
+{
+    padding-bottom: 1rem;
+}
+
+#signup-div
+{
+    background-image: url("../img/header_img.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 700px;
+}
+
+#signup-form
+{
+    display: inline-block;
+    border: 1px solid;
+    width: 20%;
+    height: 80vh;
+    padding-left: 2rem;
+    padding-top: 1rem;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+    background-color: #ffffff;
+    margin-top: 5rem;
+    margin-left: 6rem;
+}
+
+#signupbut
+{
+    height: 2rem;
+    width: 100%;
+    border-radius: 8px;
+    background-color: crimson;
+    text-align: center;
+}
+
+footer
+{
+    background-color: rgb(209, 203, 203);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+}
