@@ -31,5 +31,7 @@ app.get("/registration",(req,res)=>{
 //app.post("/message",(req,res)=>{
 //  res.render("message")
 //});
-const PORT = 3000;
-app.listen(PORT);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT,()=>{
+  console.log(`Server Connected`)
+});
