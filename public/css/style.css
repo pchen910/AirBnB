@@ -37,7 +37,7 @@ nav
     background-size: cover;
     height: 700px;
 }
-
+/*
 #promotionpic
 {
     width: 30%;
@@ -54,7 +54,7 @@ nav
     grid-column: 2/span 2;
     column-gap: 5rem;
 }
-
+*/
 .searchform
 {
     display: inline-block;
