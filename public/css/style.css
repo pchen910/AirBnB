@@ -40,7 +40,6 @@ nav
 
 #promotionpic
 {
-    
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -49,6 +48,15 @@ nav
 {
     grid-column: 2/span 2;
     column-gap: 5rem;
+    padding-top: 3rem;
+}
+
+#promo-pic
+{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
 }
 
 .searchform
