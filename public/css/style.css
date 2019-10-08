@@ -49,7 +49,7 @@ nav
     grid-template-columns: 1fr 1fr;
 }
 
-#promotionpic > p
+#promo-p
 {
     grid-column: 2/span 2;
     column-gap: 5rem;
