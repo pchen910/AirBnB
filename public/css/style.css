@@ -45,6 +45,13 @@ nav
     padding-bottom: 2rem;
     padding-left: 2rem;
     padding-right: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#promotionpic > p
+{
+    grid-column: 2/span 2;
 }
 
 .searchform
