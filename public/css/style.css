@@ -37,24 +37,20 @@ nav
     background-size: cover;
     height: 700px;
 }
-/*
+
 #promotionpic
 {
-    width: 30%;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-#promo-p
+#promotionpic > p
 {
     grid-column: 2/span 2;
     column-gap: 5rem;
 }
-*/
+
 .searchform
 {
     display: inline-block;
