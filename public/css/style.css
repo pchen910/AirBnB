@@ -106,7 +106,7 @@ img
     display: inline-block;
     border: 1px solid;
     width: 20%;
-    height: 80vh;
+    height: 85vh;
     padding-left: 2rem;
     padding-top: 1rem;
     padding-right: 2rem;
@@ -131,4 +131,9 @@ footer
     padding-top: 2rem;
     padding-bottom: 2rem;
     text-align: center;
+}
+
+input
+{
+    width: 100%;
 }
