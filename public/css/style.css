@@ -38,6 +38,11 @@ nav
     height: 700px;
 }
 
+#promotionpic
+{
+    background-image: url("../img/promotion.jpg");
+}
+
 .searchform
 {
     display: inline-block;
