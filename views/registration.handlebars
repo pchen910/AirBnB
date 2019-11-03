@@ -1,5 +1,10 @@
 
 <div id="signup-div">
+
+    {{#each registration}}
+
+    <div class="errors">{{this}}</div>
+    {{/each}}
     
     <form method="POST" action="/registration" id="signup-form">
     <h2>Sign Up</h2>
@@ -13,7 +18,8 @@
         <input type="text" name="lname" placeholder="Last Name"><br><br>
 
         <input type="text" name="password" placeholder="Create password"><br><br>
-
+        <p>Password must be 6 to 12 characters and letters and numbers only</p>
+        
         <h3>Birthday</h3>
             <p class="signup-p">To sign up, you need to be at least 18. Other people who use Airbnb won’t see your birthday.</p>
 
@@ -21,5 +27,6 @@
             <p class="signup-p">We’ll send you marketing promotions, special offers, inspiration, and policy updates via email.</p>
         <input type="submit" name="signup-but" value="Sign Up" id="signupbut">
 
+        
     </form>
 </div>
