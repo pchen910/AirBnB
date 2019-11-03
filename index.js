@@ -24,9 +24,15 @@ app.get("/room",(req,res)=>{
 
 app.get("/registration",(req,res)=>{
   
-    res.render("registration")
+  res.render("registration")
   
-  });
+});
+
+app.get("/login",(req,res)=>{
+  
+  res.render("login")
+  
+});
 // The below route handle is called to process the form when submitted
 //app.post("/message",(req,res)=>{
 //  res.render("message")
