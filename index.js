@@ -97,7 +97,68 @@ app.post("/registration",(req,res)=>
       else
       {
 
-      }  
+        const Schema = mongoose.Schema;
+
+        const taskSchema = new Schema({
+        email: String,
+        fname:  String,
+        lname: String,
+        password: String,
+        birthday: String
+      });
+
+    //This creates a Model called Tasks. This model represents our Collection in our database
+      const Task = mongoose.model('Task', taskSchema);
+
+      const formData ={
+        email:req.body.email,
+        fname:req.body.fname,
+        lname:req.body.lname,
+        password:req.body.password,
+        birthday:req.body.birthday
+    }
+    //To create a  Task document we have to call the Model constructor
+    const sign = new Task(formData);
+    sign.save()
+    .then(() => 
+    {
+        console.log('Task was inserted into database')
+    })
+    .catch((err)=>{
+        console.log(`Task was not inserted into the database because ${err}`)
+    })
+
+
+    const nodemailer = require('nodemailer');
+    const sgTransport = require('nodemailer-sendgrid-transport');
+
+    const options = {
+      auth: {
+              api_key: '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'
+            }
+    }
+
+    const mailer = nodemailer.createTransport(sgTransport(options));
+
+    const email = {
+          to: `${req.body.email}`,
+          from: 'bs810910@gmail.com',
+          subject: 'Welcome',
+          text: `Hellow, ${req.body.fname} ${req.body.lname}!\n You have sign up successfully from our AirBnB.`,
+            html: ``
+        };
+         
+    mailer.sendMail(email, (err, res)=> {
+          if (err) { 
+            console.log(err) 
+          }
+            console.log(res);
+        });
+
+      //REDIRECT THE USER TO THE DASHBOARD ROUTE
+        res.redirect("/");
+    }
+      
 });
 
 app.get("/login",(req,res)=>{
@@ -140,6 +201,22 @@ app.post("/login",(req,res)=>
           })
       }
 });
+
+
+const DBURL= "mongodb+srv://WEB322:azx810910@cluster0-za4ky.mongodb.net/test?retryWrites=true&w=majority";
+mongoose.connect(DBURL, {useNewUrlParser: true})
+//The then block will only be executed if the above-mentioned line is successful
+.then(()=>{
+    console.log(`Database is connected`)
+})
+//The catch block will only be executed if the connection failed
+.catch(err=>{
+    console.log(`Something went wrong : ${err}`);
+})
+
+
+
+
 // The below route handle is called to process the form when submitted
 //app.post("/message",(req,res)=>{
 //  res.render("message")

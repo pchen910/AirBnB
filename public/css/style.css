@@ -67,10 +67,10 @@ nav
     border-style: ridge;
     border-radius: 10px;
     width: 20%;
-    height: 60vh;
     padding-left: 1.5rem;
     padding-top: 1.5rem;
     padding-right: 1.5rem;
+    padding-bottom: 1.5rem;
     background-color: #ffffff;
     margin-top: 5rem;
     margin-left: 8rem;
@@ -129,7 +129,7 @@ img
     display: inline-block;
     border: 1px solid;
     width: 20%;
-    height: 75%;
+    
     padding-left: 2rem;
     padding-top: 1rem;
     padding-right: 2rem;
@@ -175,7 +175,6 @@ input
     display: inline-block;
     border: 1px solid;
     width: 20%;
-    height: 35%;
     padding-left: 2rem;
     padding-top: 1rem;
     padding-right: 2rem;
