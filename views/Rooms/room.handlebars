@@ -1,0 +1,19 @@
+<h2 class="roomh2">Room Lists</h2>
+
+<section>
+
+    <div class="pics-container">
+        {{#each roomLists}} 
+        <div>
+            <img src="/uploads/{{this.profilePic}}">        
+                <h3>{{this.title}}</h3>
+                <p>{{this.description}}</p>
+                <p>{{this.location}}</p>
+                <p>CAD$ {{this.price}}</p>
+        </div>
+    </div>    
+        {{else}}
+            No Rooms are avaliable
+        {{/each}}
+      
+</section>

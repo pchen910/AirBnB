@@ -1,0 +1,19 @@
+<h2>Room Lists</h2>
+ 
+ <section class="tasks-container">
+     {{#each lists}} 
+     <div>
+        <a href="/room/profile/{{this._id}}">{{this.title}}</a> &nbsp;&nbsp;
+        <a href="/room/edit/{{this._id}}">Edit</a>&nbsp;&nbsp;
+        <form id="deleteButtonForm" method="POST" action="/room/delete/{{this._id}}?_method=DELETE">
+            <input type="submit" value="Delete" class="delButtons" data-id="{{this.id}}" data-title="{{this.title}}">
+        </form>
+    </div>
+    {{else}}
+        No Room has Booked
+     {{/each}}
+</section>
+
+<div id="tasks-links-holder">
+    <a href="/room/addroom">Add a Room</a>
+</div>

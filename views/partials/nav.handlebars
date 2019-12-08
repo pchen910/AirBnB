@@ -1,0 +1,17 @@
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/room/roomPage"> Room Lists </a>
+                {{#if user}}
+                    <li><a href="/user/logout">Log out</a></li>
+                {{else}}
+                    <li><a href="/user/login">Login</a></li>
+                    <li><a href="/user/registration">Registration </a></li>
+                {{/if}}
+                {{#if user.admin}}
+                    <li><a href="/room/addroom">Create Room</a></li>
+                    <li><a href="/admin/adminDashboard">Admin</a></li>
+                {{/if}}
+            </ul>
+        </nav>

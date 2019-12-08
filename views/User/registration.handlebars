@@ -6,19 +6,22 @@
     <div class="errors">{{this}}</div>
     {{/each}}
     
-    <form method="POST" action="/registration" id="signup-form">
+    <form method="POST" action="/user/registration" id="signup-form" enctype="multipart/form-data">
     <h2>Sign Up</h2>
 
         <p class="signup-p">Sign up with <a href="" class="sociallink">Facebook</a> OR <a href="" class="sociallink">Google</a></p>
-
+        <label>Email</label>
         <input type="email" name="email" placeholder="Email Address"><br><br>
-
+        <label>First Name</label>
         <input type="text" name="fname" placeholder="First Name"><br><br>
-
+        <label>Last Name</label>
         <input type="text" name="lname" placeholder="Last Name"><br><br>
-
-        <input type="password" name="password" placeholder="Create password"><br><br>
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Create password"><br>
         <p>Password must be 6 to 12 characters and letters and numbers only</p>
+
+        <label>Confirm Password</label>
+        <input type="password" name="cpassword" id="cpassword"> <br><br>
         
         <h3>Birthday</h3>
             <p class="signup-p">To sign up, you need to be at least 18. Other people who use Airbnb won’t see your birthday.</p>
