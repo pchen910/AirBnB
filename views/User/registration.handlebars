@@ -1,14 +1,12 @@
 
-<div id="signup-div">
-
-    {{#each registration}}
+{{#each registration}}
 
     <div class="errors">{{this}}</div>
     {{/each}}
-    
-    <form method="POST" action="/user/registration" id="signup-form" enctype="multipart/form-data">
+<div id="signup-div">
+    <div id="signup-form">
     <h2>Sign Up</h2>
-
+    <form method="POST" action="/user/registration"  enctype="multipart/form-data">
         <p class="signup-p">Sign up with <a href="" class="sociallink">Facebook</a> OR <a href="" class="sociallink">Google</a></p>
         <label>Email</label>
         <input type="email" name="email" placeholder="Email Address"><br><br>
@@ -31,5 +29,6 @@
         <input type="submit" name="signup-but" value="Sign Up" id="signupbut">
 
         
-    </form>
+        </form>
+    </div>
 </div>

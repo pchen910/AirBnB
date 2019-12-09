@@ -112,12 +112,42 @@ router.get("/roomPage",(req,res)=>
     .catch(err=>console.log(`Error : ${err}`));
 });
 
-//Route to direct user to the task profile page
+router.post("/search",(req,res)=>{
+
+    const errors = [];
+
+    if(req.body.city == "")
+    {
+        errors.push("Please select a city")
+    }
+    if(errors.length > 0)
+    {
+
+        res.render("Rooms/home",
+        {
+           login:errors 
+        })
+    }
+
+
+        Room.find({location:req.body.city})
+        .then((rooms)=>{        
+            res.render("Rooms/roomSearch",
+            {
+                searchLists:rooms
+            });
+        
+    })
+    .catch(err=>console.log(`Error : ${err}`));
+    
+})
+
+//Route to direct user to the room profile page
 router.get("/profile/:id",hasAccess,(req,res)=>{
 
     Room.findById(req.params.id)
     .then((room)=>{
-        res.render("Rooms/roomDashboard",{
+        res.render("Rooms/editRoom",{
             roomDocument:room
         })
     })
@@ -177,5 +207,8 @@ router.delete("/delete/:id",hasAccess,(req,res)=>
     })
     .catch(err=>console.log(`Error : ${err}`));
 });
+
+//Route to direct user to home page
+
 
 module.exports=router;
