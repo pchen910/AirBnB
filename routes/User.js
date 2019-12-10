@@ -74,10 +74,7 @@ router.post("/registration",(req,res)=>
           errors.push("Please select your birthday")
       }
 
-      if({email:req.body.email})
-      {
-        errors.push("Email has been used")
-      }
+      
       // User.findOne({email:req.body.email})
       //   .then((email)=>{   
       //     if(email)
@@ -100,9 +97,22 @@ router.post("/registration",(req,res)=>
       //This means that there are no errors
       else
       {
-        
+        // if({email:req.body.email})
+        // {
+        //   errors.push("Email has been used")
+        // }
       //To create a User document we have to call the Model constructor
       const user = new User(newUser);
+      User.findOne(newUser.email)
+         .then((email)=>{   
+           if(email)
+             {     
+              res.render("/User/registration",{
+
+               registration:`Email has been used`
+              })
+             }
+         })
       user.save()
       .then(() => 
       {
