@@ -73,22 +73,35 @@ router.post("/registration",(req,res)=>
       {
           errors.push("Please select your birthday")
       }
+
+      if({email:req.body.email})
+      {
+        errors.push("Email has been used")
+      }
+      // User.findOne({email:req.body.email})
+      //   .then((email)=>{   
+      //     if(email)
+      //       {     
+      //         errors.push("Email has been used")
+      //       }
+      //   })
   
-        //This means that there are errors
-        if(errors.length > 0)
-        {
+      //This means that there are errors
+      if(errors.length > 0)
+      {
+        res.render("User/registration",
+          {
+            registration:errors 
+          })
+      }
+        
+        
   
-            res.render("User/registration",
-            {
-               registration:errors 
-            })
-        }
-  
-        //This means that there are no errors
-        else
-        {
-  
-      //To create a  Task document we have to call the Model constructor
+      //This means that there are no errors
+      else
+      {
+        
+      //To create a User document we have to call the Model constructor
       const user = new User(newUser);
       user.save()
       .then(() => 
@@ -96,7 +109,7 @@ router.post("/registration",(req,res)=>
           console.log('Your information was inserted into database')
       })
       .catch((err)=>{
-          console.log(`Your information was not inserted into the database because ${err}`)
+          console.log(`Your information was not inserted into the database because ${err}`)  
       })
   
   

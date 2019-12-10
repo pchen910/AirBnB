@@ -4,7 +4,8 @@
 
         <form method="POST" action="/room/search" id="form">
             <label>WHERE</label>
-            <select name="city">
+            <select name="city" value="none">
+            <option value="">Chose a City</option>   
             <option value="Toronto" >Toronto</option>
             <option value="Vancouver" >Vancouver</option>
             <option value="Banff" >Banff</option>
@@ -23,7 +24,11 @@
             <input type="submit" id="searchbut" name="submit" value="Search">
         </form>
     </div>
+    {{#each search}}
+        <div class="errors">{{this}}</div>
+    {{/each}}
 </div>
+
 
 <div id="promotionpic">
     <img id="promo-pic" src="img/promotion.jpg">

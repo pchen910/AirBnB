@@ -1,33 +1,28 @@
 <h2 class="roomh2">Room Lists</h2>
 
-<section>
+{{!-- <section> --}}
 
-    <div class="pics-container">
+    {{!-- <div class="pics-container"> --}}
+    <div class="container-fluid" style="margin: 50px 20px;">
+        <div class="row">
         {{#each roomLists}} 
-        <div>
-            <img src="/uploads/{{this.profilePic}}">        
+        
+            <div class="col-sm-3" style="border:1px solid black">
+                <img style="width: 100%; margin-top:12px;" src="/uploads/{{this.profilePic}}">        
                 <h3>{{this.title}}</h3>
                 <p>{{this.description}}</p>
                 <p>{{this.location}}</p>
-                <p>CAD$ {{this.price}}</p>        
-        </div>
+                <p>CAD$ {{this.price}}</p>  
 
+                <form method="POST" action="/room/room" >
+                <input type="submit" id="searchbut" name="submit" value="Book">      
+                </form>   
+            </div>
         {{else}}
             No Rooms are avaliable
         {{/each}}
-
-        {{#each searchLists}}
-        <div>
-            <img src="/uploads/{{this.profilePic}}">        
-                <h3>{{this.title}}</h3>
-                <p>{{this.description}}</p>
-                <p>{{this.location}}</p>
-                <p>CAD$ {{this.price}}</p>
         </div>
-        {{else}}
-            No Rooms are avaliable
-        {{/each}}
     </div>    
         
       
-</section>
+{{!-- </section> --}}

@@ -125,7 +125,7 @@ router.post("/search",(req,res)=>{
 
         res.render("Rooms/home",
         {
-           login:errors 
+           search:errors 
         })
     }
 
